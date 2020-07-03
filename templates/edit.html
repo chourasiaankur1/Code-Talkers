@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <!-- Page Header -->
+  
+  <header class="masthead" style="background-image: url('{{url_for('static',filename='img/admin.jpeg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Admin Panel</h1>
+            <span class="subheading">Manage your codes and change them</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+      <h1>
+        Add/Edit Codes
+      </h1>
+      {% set sno = 0 %}
+      {% if code %}
+        sno = code.sno
+      {% endif %}
+      <form name="sentMessage" id="contactForm" action='/edit/{{sno}}' method='POST' novalidate>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="Title" name='title' id="title" 
+            required data-validation-required-message="Please enter your Title." value="{{code.title}}">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Subheading</label>
+            <input type="text" class="form-control" placeholder="Sub-Heading" name='subheading' id="subheading" value="{{code.subheading}}">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Slug</label>
+            <input type="text" class="form-control" placeholder="Slug" name='slug' id="slug" 
+            required data-validation-required-message="Please enter the slug." value="{{code.slug}}">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Content</label>
+            <textarea rows="5" class="form-control" placeholder="Content" name='content' id="content" >{{code.content}}</textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Img-File</label>
+              <input type="text" class="form-control" placeholder="Img-File" name='img_file' id="img_file" value="{{code.img_file}}">
+              <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+      </form>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+  

@@ -1,0 +1,22 @@
+{
+    "params":
+    {
+        "local_server":"True",
+        "local_uri":"mysql+pymysql://root:@localhost/skoder",
+        "prod_uri":"mysql+pymysql://root:@localhost/skoder",
+        "linkedin_url":"https://www.linkedin.com/in/ankur-chourasia-790783145/",
+        "tw_url":"https://www.twitter.com/chourasia_ankur",
+        "gh_url":"https://www.github.com/chourasiaankur1",
+        "hack_url":"https://www.hackerrank.com/AnkurChourasia",
+        "blog_name":"Skoder",
+        "tag_line":"A blog liked by programmers",
+        "gmail-user":"kaggle404@gmail.com",
+        "gmail-password":"ankur031298@",
+        "login_image":"login.svg",
+        "no_of_posts":2,
+        "admin_user":"ankur",
+        "admin_password":"1234",
+        "upload_location":"C:\\users\\hp\\desktop\\flask\\tutorial\\uploads"
+    }
+}
+
